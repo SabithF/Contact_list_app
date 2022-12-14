@@ -19,7 +19,6 @@ class _AddNewUserState extends State<AddNewUser> {
   var _userCnumberCont = TextEditingController();
   // var _userImg;
 
-
   // validation
   // bool _validateFName = false;
   bool _validateFN = false;
@@ -35,145 +34,140 @@ class _AddNewUserState extends State<AddNewUser> {
         title: const Text("Create contact"),
       ),
       body: SingleChildScrollView(
-        // creating the form
+          // creating the form
           child: Container(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
 
+          // ignore: duplicate_ignore
+          children: [
+            const Text(
+              'Add a new contact',
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.orange,
+                  fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
 
-              // ignore: duplicate_ignore
-              children: [
-                const Text(
-                  'Add a new contact',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.w800),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
+            Container(
+              alignment: Alignment.center,
 
-                Container(
-                  alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 5),
+              height: 120,
+              width: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange,
+              ),
+              child: Center(
+                child: Icon(Icons.person, color: Colors.white, size: 80),
+              ),
 
-                  margin:  EdgeInsets.only(top: 5),
-                  height:120,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    borderRadius:BorderRadius.circular(20),
-                    color: Colors.deepOrange,),
-                  child:Center(
-                    child: Icon(Icons.person,
-                    color: Colors.white,
-                    size: 80),
-                  ),
+              //   child:CircleAvatar(
+              //     backgroundImage: AssetImage('images/proimg.png'),
+              //
+              //   radius: 50,
+              //
+              // ),
+              //   Padding(
+              //     padding: const EdgeInets.all(8.0),
+              //      child: RaisedButton(
+              //        onPressed: (){
+              //          PickImage()
+              //        },
+              //
+              //      ),
+              //   ),
+            ),
+            //     // headerSave Button
 
-                //   child:CircleAvatar(
-                //     backgroundImage: AssetImage('images/proimg.png'),
-                //
-                //   radius: 50,
-                //
-                // ),
-                //   Padding(
-                //     padding: const EdgeInets.all(8.0),
-                //      child: RaisedButton(
-                //        onPressed: (){
-                //          PickImage()
-                //        },
-                //
-                //      ),
-                //   ),
+            // to add padding btwn
 
-                ),
-                //     // headerSave Button
+            // ignore: prefer_const_constructors
+            const SizedBox(
+              height: 20.0,
+            ),
+            // Input fields
+            SizedBox(
+              // width: 100.0,
+              child: TextField(
+                style: TextStyle(
+                    fontSize: 18.0,
+                    height: 1.0,
+                    color: Color.fromARGB(255, 3, 21, 75)),
+                controller: _userFNameCont,
+                decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Name',
+                    labelText: 'Name',
+                    errorText: _validateFN ? 'Please input details' : null),
+              ),
+            ),
+            // Second name
 
+            SizedBox(
+              height: 10.0,
+            ),
+            // Input fields
+            SizedBox(
+              // width: 100.0,
+              child: TextField(
+                style: TextStyle(
+                    fontSize: 18.0,
+                    height: 1.0,
+                    color: Color.fromARGB(255, 3, 21, 75)),
+                controller: _userSNameCont,
+                decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'E-Mail',
+                    labelText: 'E-Mail',
+                    errorText: _validateLN ? 'Please input details' : null),
+              ),
+            ),
+            // Contact Number
+            SizedBox(
+              height: 10.0,
+            ),
+            // Input fields
+            SizedBox(
+              // width: 100.0,
+              child: TextField(
+                style: TextStyle(
+                    fontSize: 18.0,
+                    height: 1.0,
+                    color: Color.fromARGB(255, 243, 8, 8)),
+                controller: _userCnumberCont,
+                decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Contact Number',
+                    labelText: 'Contact Number',
+                    errorText: _validateCN ? 'Please input details' : null),
+              ),
+            ),
+            // Creating action button
+            const SizedBox(
+              height: 20.0,
+            ),
+            //
+            //profile pic
 
-                // to add padding btwn
-
-                // ignore: prefer_const_constructors
-                const SizedBox(
-                  height: 20.0,
-                ),
-                // Input fields
-                SizedBox(
-                  // width: 100.0,
-                  child: TextField(
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        height: 1.0,
-                        color: Color.fromARGB(255, 3, 21, 75)),
-                    controller: _userFNameCont,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: 'Name',
-                        labelText: 'Name',
-                        errorText: _validateFN ? 'Please input details' : null),
-                  ),
-                ),
-                // Second name
-
-                SizedBox(
-                  height: 10.0,
-                ),
-                // Input fields
-                SizedBox(
-                  // width: 100.0,
-                  child: TextField(
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        height: 1.0,
-                        color: Color.fromARGB(255, 3, 21, 75)),
-                    controller: _userSNameCont,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: 'E-Mail',
-                        labelText: 'E-Mail',
-                        errorText: _validateLN ? 'Please input details' : null),
-                  ),
-                ),
-                // Contact Number
-                SizedBox(
-                  height: 10.0,
-                ),
-                // Input fields
-                SizedBox(
-                  // width: 100.0,
-                  child: TextField(
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        height: 1.0,
-                        color: Color.fromARGB(255, 243, 8, 8)),
-                    controller: _userCnumberCont,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        hintText: 'Contact Number',
-                        labelText: 'Contact Number',
-                        errorText: _validateCN ? 'Please input details' : null),
-                  ),
-                ),
-                // Creating action button
-                const SizedBox(
-                  height: 20.0,
-                ),
-                //
-                //profile pic
-
-                SizedBox(
-                    width: double.infinity,
-                    height: 40,
-                    child:
+            SizedBox(
+                width: double.infinity,
+                height: 40,
+                child:
 
                     // Row(
                     //   children: [
                     TextButton(
                         style: TextButton.styleFrom(
-
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.10)),
 
-                          // use foregroundColor insted of primary
+                            // use foregroundColor insted of primary
                             foregroundColor: Colors.white,
                             backgroundColor: Colors.green[900],
                             textStyle: const TextStyle(fontSize: 18)),
@@ -206,16 +200,15 @@ class _AddNewUserState extends State<AddNewUser> {
                             // print(result);
                           }
                         },
-                        child: const Text('Save'))
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                // Clear Button
-                SizedBox(
-                    width: double.infinity,
-                    height: 40,
-                    child:
+                        child: const Text('Save'))),
+            SizedBox(
+              height: 5.0,
+            ),
+            // Clear Button
+            SizedBox(
+                width: double.infinity,
+                height: 40,
+                child:
 
                     // Row(
                     //   children: [
@@ -224,7 +217,7 @@ class _AddNewUserState extends State<AddNewUser> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.10)),
 
-                          // use foregroundColor insted of primary
+                            // use foregroundColor insted of primary
                             foregroundColor: Colors.white,
                             backgroundColor: Color.fromARGB(255, 228, 70, 8),
                             textStyle: const TextStyle(fontSize: 18)),
@@ -235,11 +228,11 @@ class _AddNewUserState extends State<AddNewUser> {
                           _userCnumberCont.text = '';
                         },
                         child: const Text('Clear'))
-                  // ],
+                // ],
                 )
-              ],
-            ),
-          )),
+          ],
+        ),
+      )),
     );
   }
 }
